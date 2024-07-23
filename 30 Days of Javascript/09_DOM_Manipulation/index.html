@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <p id="task-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consequuntur.</p>
+    <p class="task-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, laborum.</p>
+
+    <ul class="task-4">
+        <li>List Item - 1</li>
+        <li>List Item - 2</li>
+    </ul>
+
+    <h2 class="task-5">Element to be removed</h2>
+
+    <ol class="task-6">
+        <li>List Item - 1</li>
+        <li>List Item - 2</li>
+        <li>List Item - 3</li>
+    </ol>
+
+    <img class="task-7" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg">
+
+    <div class="task-8">Task 8</div>
+
+
+    <div class="task-9">
+        <p>Click the button to change the text</p>
+        <button>Change Text</button>
+    </div>
+
+    <div class="task-10">
+        Task 10
+    </div>
+
+    <script>
+
+        // Selecting and Manipulating Elements
+
+        // Task 1
+        const task1 = document.getElementById("task-1");
+        task1.innerText = "Text has been changed using javascript.";
+
+        // Task 2
+        const task2 = document.getElementsByClassName("task-2")[0];
+        task2.style.backgroundColor = "lightgreen";
+
+        
+        // Creating and Appending Elements
+
+        // Task 3
+        const div = document.createElement("div");
+        div.style.border = "1px solid black";
+        div.innerText = "This is a new div created using Javascript.";
+        document.body.appendChild(div);
+
+        // Task 4
+        const ul = document.getElementsByClassName("task-4")[0];
+        const li = document.createElement("li");
+        li.innerText = "List Item - 3";
+        ul.appendChild(li);
+
+        
+        // Removing Elements
+
+        // Task 5
+        const h2 = document.getElementsByClassName("task-5")[0];
+        document.body.removeChild(h2);
+
+        // Task 6
+        const ol = document.getElementsByClassName("task-6")[0];
+        const listItems = document.getElementsByTagName("li");
+        ol.removeChild(listItems[listItems.length - 1]);
+
+        
+        // Modifying Attributes and Classes
+
+        // Task 7
+        const img = document.getElementsByClassName("task-7")[0];
+        img.style.height = "220px";
+        img.src = "https://amateurphotographer.com/wp-content/uploads/sites/7/2014/09/Canon-EOS-7D-Mark-II-sample-image-1-small.jpg";
+
+        // Task 8
+        const div2 = document.getElementsByClassName("task-8")[0];
+        div2.classList.remove("task-8");
+        div2.classList.add("task-8-new");
+
+
+        // Event Handling
+
+        // Task 9
+        const button = document.getElementsByTagName("button")[0];
+        button.addEventListener("click", function() {
+            const p = document.querySelector(".task-9 p");
+            p.innerText = "Text has been changed using javascript.";
+        });
+
+        // Task 10
+        const div3 = document.getElementsByClassName("task-10")[0];
+        div3.style.backgroundColor = "lightyellow";
+        div3.style.height = "100px";
+        div3.style.border = "2px solid yellow";
+
+        div3.addEventListener("mouseover", () => {
+            div3.style.borderColor = "green";
+        });
+
+
+    </script>
+</body>
+</html>
