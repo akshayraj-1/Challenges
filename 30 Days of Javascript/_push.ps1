@@ -1,4 +1,4 @@
-Set-Location "C:\Users\aksha\Documents\Akshay\Practice\Challenges\Javascript"
+Set-Location "C:\Users\aksha\Documents\Practice\Challenges\Javascript"
 
 git add .
 git commit -m "30 Days of Javascript"
